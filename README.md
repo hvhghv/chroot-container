@@ -114,8 +114,10 @@ cp wolfssh/src/.libs/libwolfssh.so.18.0.0 ubuntu-base/lib/libwolfssh.so.18
 cp -r chroot-container/src/* ubuntu-base
 cp -r chroot-container/target/ubuntu/* ubuntu-base
 cp -r chroot-container/ext/LinuxMirrors/* ubuntu-base
-cp -r chroot-container/ext/se-boot/* ubuntu-base
 cp -r chroot-container/ext/wolfsshd/* ubuntu-base
+
+mkdir ubuntu-base/etc/se_boot
+cp chroot-container/ext/se-boot/etc/se_boot/02_01_wolfsshd.sh ubuntu-base/etc/se_boot
 ```
 ### 设置文件权限
 ```
