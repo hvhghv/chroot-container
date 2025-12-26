@@ -9,6 +9,9 @@
 5. 理论上适配各类发行版镜像与自编译嵌入式Linux环境
 6. 支持运行于Android Chroot环境
 
+## 注意
+若不需要容器初始化时启动sshd服务，请删除`etc/se_boot/02_01_wolfsshd.sh`文件或注释掉里面的内容
+
 ## 运行
 1. 直接在release页面下载已制作好的根文件系统压缩包，通过`tar -xf xxxxx`进行解压
 
