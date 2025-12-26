@@ -1,0 +1,8 @@
+Port 7022
+
+HostKey /etc/wolfsshd/ssh_host_rsa_key
+
+PermitRootLogin yes
+PasswordAuthentication no
+AuthorizedKeysFile	.ssh/authorized_keys
+
