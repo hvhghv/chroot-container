@@ -10,8 +10,10 @@
 6. 支持运行于Android Chroot环境
 
 ## 注意
-若不需要容器初始化时启动sshd服务，请删除`etc/se_boot/02_01_wolfsshd.sh`文件或注释掉里面的内容
-
+1. 若不需要容器初始化时启动sshd服务，请删除`etc/se_boot/02_01_wolfsshd.sh`文件或注释掉里面的内容
+2. 若有安全需求，建议更换`etc/wolfsshd/ssh_host_rsa_key`的私钥内容
+3. 对于Android Chroot容器，目前仅考虑该容器随宿主系统持续运行，不会中途关闭停止，因此删除了`container-exit.sh`文件
+4. 对于Android Chroot容器，其Android Linux内核执行unshare/nsenter时绝大多数情况是不支持--pid选项，因此会有所修改
 ## 运行
 1. 直接在release页面下载已制作好的根文件系统压缩包，通过`tar -xf xxxxx`进行解压
 
