@@ -90,13 +90,13 @@ make -j12
 ```
 cd wolfssl
 ./autogen.sh
-./configure --enable-ssh # 交叉编译改用 ./configure --host=aarch64-linux-musl CC=aarch64-linux-musl-gcc --enable-ssh 
+./configure --enable-ssh # 交叉编译改用 ./configure --host=aarch64-linux-musl CC=aarch64-linux-musl-gcc --prefix=/opt/wolfssl  --enable-ssh 
 make -j12
 make install
 
 cd ../wolfssh
 ./autogen.sh
-./configure --enable-sshd --enable-sftp --enable-fwd --enable-certs
+./configure --enable-sshd --enable-sftp --enable-fwd --enable-certs # 交叉编译改用 ./configure --enable-sshd --enable-sftp --enable-fwd --enable-certs --host=aarch64-linux-musl CC=aarch64-linux-musl-gcc --with-wolfssl=/opt/wolfssl
 make -j12
 ```
 
